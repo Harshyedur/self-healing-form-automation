@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Modified Practice Form</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 40px; max-width: 700px; }
+    .row { margin-bottom: 18px; }
+    label.title { display: block; font-weight: bold; margin-bottom: 4px; }
+    input[type=text], select { width: 100%; padding: 8px; }
+  </style>
+</head>
+<body>
+  <h2>Modified Form</h2>
+
+  <!-- Decoy: another radio group with similar-looking options -->
+  <div class="row">
+    <span class="title"><b>Subscribe to newsletter</b></span><br>
+    <input type="radio" name="zz1" value="a"> Yes
+    <input type="radio" name="zz1" value="b"> No
+  </div>
+
+  <!-- Decoy: a country dropdown placed before State -->
+  <div class="row">
+    <label class="title">Country</label>
+    <select class="q7" id="c_77">
+      <option value="">-- Choose --</option>
+      <option value="in">India</option>
+      <option value="us">United States</option>
+    </select>
+  </div>
+
+  <!-- State dropdown, now near the top, with new id and class -->
+  <div class="row">
+    <label class="title">State</label>
+    <select class="k3" id="sel_x19" name="f_9">
+      <option value="">-- Choose --</option>
+      <option value="1">Maharashtra</option>
+      <option value="2">Karnataka</option>
+      <option value="3">Gujarat</option>
+    </select>
+  </div>
+
+  <!-- Decoy: surname placed before the first name box -->
+  <div class="row">
+    <label class="title">Last Name</label>
+    <input type="text" id="aa12" name="ln_zz" placeholder="Surname">
+  </div>
+
+  <!-- Decoy: nickname box -->
+  <div class="row">
+    <label class="title">Nickname</label>
+    <input type="text" id="nick_1" placeholder="Nickname">
+  </div>
+
+  <!-- First Name, now in a different place with a new id and name -->
+  <div class="row">
+    <label class="title">First Name</label>
+    <input type="text" id="x91" name="qq_44" class="zq" placeholder="Name">
+  </div>
+
+  <!-- Gender, new structure: labels come after the radios, values changed -->
+  <div class="row">
+    <span class="title"><b>Gender</b></span><br>
+    <input type="radio" name="g_77" value="1"> Male
+    <input type="radio" name="g_77" value="2"> Female
+    <input type="radio" name="g_77" value="3"> Transgender
+  </div>
+</body>
+</html>

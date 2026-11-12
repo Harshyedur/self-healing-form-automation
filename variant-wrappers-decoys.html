@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Variant B - wrappers and decoys</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 40px; max-width: 700px; }
+    .card { border: 1px solid #ccc; padding: 12px; margin-bottom: 16px; }
+    .cap { font-weight: bold; margin-bottom: 4px; }
+    input[type=text], select { width: 100%; padding: 8px; }
+  </style>
+</head>
+<body>
+  <h2>Applicant Details</h2>
+
+  <!-- Decoy: looks like a name field, but is not First Name -->
+  <div class="card"><div class="cap">Company Name</div>
+    <div class="shell"><div class="inner"><input type="text" id="u1" name="c_9" placeholder="Company"></div></div>
+  </div>
+
+  <!-- Decoy: a second dropdown near State -->
+  <div class="card"><div class="cap">Preferred Language</div>
+    <div class="shell"><div class="inner">
+      <select id="u2"><option value="">Select</option><option value="en">English</option><option value="hi">Hindi</option></select>
+    </div></div>
+  </div>
+
+  <!-- First Name: caption and input separated by two wrapper divs -->
+  <div class="card"><div class="cap">First Name</div>
+    <div class="shell"><div class="inner"><input type="text" id="u3" name="z_4" placeholder="Type here"></div></div>
+  </div>
+
+  <!-- Gender: caption is a plain div, radios and their text are wrapped in spans and divs -->
+  <div class="card"><div class="cap">Gender</div>
+    <div class="shell"><div class="inner">
+      <span><input type="radio" name="q" value="9"><span>Male</span></span>
+      <span><input type="radio" name="q" value="8"><span>Female</span></span>
+      <span><input type="radio" name="q" value="7"><span>Other</span></span>
+    </div></div>
+  </div>
+
+  <!-- Decoy: another radio group with the same words -->
+  <div class="card"><div class="cap">Spouse Gender</div>
+    <div class="shell"><div class="inner">
+      <span><input type="radio" name="sp" value="1"><span>Male</span></span>
+      <span><input type="radio" name="sp" value="2"><span>Female</span></span>
+    </div></div>
+  </div>
+
+  <!-- State: caption in a div, dropdown inside wrappers -->
+  <div class="card"><div class="cap">State</div>
+    <div class="shell"><div class="inner">
+      <select id="u4">
+        <option value="">Select</option>
+        <option value="m">Maharashtra</option>
+        <option value="k">Karnataka</option>
+        <option value="g">Gujarat</option>
+      </select>
+    </div></div>
+  </div>
+</body>
+</html>

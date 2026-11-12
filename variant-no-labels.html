@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Variant A - no label tags</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 40px; max-width: 700px; }
+    .f { margin-bottom: 16px; }
+    input[type=text], select { width: 100%; padding: 8px; }
+    .radios { display: flex; gap: 14px; }
+  </style>
+</head>
+<body>
+  <h2>Quick Registration</h2>
+  <!-- No <label> tags anywhere. Text lives only in placeholder or aria-label. -->
+
+  <div class="f"><input type="text" id="p1" name="f1" placeholder="Surname"></div>
+  <div class="f"><input type="text" id="p2" name="f2" placeholder="Nickname"></div>
+  <div class="f"><input type="text" id="p3" name="f3" aria-label="First Name"></div>
+
+  <div class="f" role="radiogroup" aria-label="Gender">
+    <div class="radios">
+      <input type="radio" name="grp" value="r1" aria-label="Male">
+      <input type="radio" name="grp" value="r2" aria-label="Female">
+      <input type="radio" name="grp" value="r3" aria-label="Other">
+    </div>
+  </div>
+
+  <div class="f">
+    <select id="s1" aria-label="Country">
+      <option value="">Pick one</option>
+      <option value="in">India</option>
+      <option value="us">United States</option>
+    </select>
+  </div>
+
+  <div class="f">
+    <select id="s2" aria-label="State">
+      <option value="">Pick one</option>
+      <option value="a">Maharashtra</option>
+      <option value="b">Karnataka</option>
+      <option value="c">Gujarat</option>
+    </select>
+  </div>
+</body>
+</html>
