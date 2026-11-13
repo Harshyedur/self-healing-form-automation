@@ -6,6 +6,8 @@ The program does not rely on a fixed id, name, class, XPath or CSS selector. It 
 
 See also `NOTES.md` for a short note on the approach and its limitations.
 
+This is **Task 1** of the submission. Task 2 (plain-English test runner) is in its own repository: <https://github.com/Harshyedur/plain-english-tester>.
+
 ## Requirements
 
 - [.NET 8 SDK](https://dotnet.microsoft.com/download) (check with `dotnet --version`)
@@ -14,8 +16,8 @@ See also `NOTES.md` for a short note on the approach and its limitations.
 ## Setup
 
 ```
-git clone <this-repo-url>
-cd <repo-folder>
+git clone https://github.com/Harshyedur/self-healing-form-automation.git
+cd self-healing-form-automation
 dotnet restore
 ```
 
@@ -70,9 +72,7 @@ The exit code is 0 when everything passes and 1 otherwise. Each field is verifie
 
 ## Testing against a changed page
 
-Three test pages are included: `modified-form.html` and the two files in `variants/`.
-
-`modified-form.html` is included. It is a scrambled version of the form with:
+One test page is included: `modified-form.html`. It is a scrambled version of the form with:
 
 - fields in a different order
 - all ids, names and classes changed
@@ -88,16 +88,6 @@ On macOS or Linux:
 
 ```
 dotnet run -- --keep-open true --state Maharashtra --url "file://$PWD/modified-form.html"
-```
-
-Two more test pages are in `variants/`:
-
-- `variants/variant-no-labels.html`: no `<label>` tags at all. Text lives only in `aria-label`.
-- `variants/variant-wrappers-decoys.html`: extra wrapper divs around every field, plus decoys ("Company Name", "Preferred Language", "Spouse Gender").
-
-```
-dotnet run -- --state Maharashtra --url "file://$PWD/variants/variant-no-labels.html"
-dotnet run -- --state Maharashtra --url "file://$PWD/variants/variant-wrappers-decoys.html"
 ```
 
 See `NOTES.md` for the approach and limitations.
